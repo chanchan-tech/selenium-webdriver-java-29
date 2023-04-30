@@ -22,36 +22,18 @@ public class Topic01_TemplateTest {
 	}
 
 	@Test
-	public void TC_01_ClassName() {
-		// Login Page Url matching
-		String loginPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
-	}
-	@Test
-	public void TC_01_Name() {
-		// Login Page Url matching
-		String loginPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
-	}
-	@Test
-	public void TC_01_TagName() {
-		// Login Page Url matching
-		String loginPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
-	}
-	@Test
-	public void TC_01_Linktext() {
-		// Login Page Url matching
-		String loginPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
-	}
-	@Test
-	public void TC_01_Patial_Link_Text() {
+	public void TC_01_ValidateCurrentUrl() {
 		// Login Page Url matching
 		String loginPageUrl = driver.getCurrentUrl();
 		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
 	}
 
+	@Test
+	public void TC_02_ValidatePageTitle() {
+		// Login Page title
+		String loginPageTitle = driver.getTitle();
+		Assert.assertEquals(loginPageTitle, "Guru99 Bank Home Page");
+	}
 
 	@Test
 	public void TC_03_LoginFormDisplayed() {
@@ -59,18 +41,9 @@ public class Topic01_TemplateTest {
 		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
 	}
 
-//	@AfterClass
-//	public void afterClass() {
-//		driver.quit();
-//	}
-	
-	public void SleepInsecond(long time) {
-		try {
-			Thread.sleep(time*1000);
-		}catch(InterruptedException e) {
-			e.printStackTrace();
-		}
+	@AfterClass
+	public void afterClass() {
+		driver.quit();
 	}
-	
-	
+
 }
