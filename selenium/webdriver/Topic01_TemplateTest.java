@@ -25,7 +25,7 @@ public class Topic01_TemplateTest {
 	public void TC_01_ValidateCurrentUrl() {
 		// Login Page Url matching
 		String loginPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
+		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/123");
 	}
 
 	@Test
