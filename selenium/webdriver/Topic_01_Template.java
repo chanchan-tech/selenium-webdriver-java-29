@@ -1,49 +1,57 @@
 package webdriver;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
-public class Topic01_TemplateTest {
+public class Topic_01_Template {
 	WebDriver driver;
 
 	@BeforeClass
 	public void beforeClass() {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("https://demo.guru99.com/v4/");
+
 	}
 
 	@Test
-	public void TC_01_ValidateCurrentUrl() {
-		// Login Page Url matching
-		String loginPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(loginPageUrl, "https://demo.guru99.com/v4/");
+	public void TC_01_() {
+		driver.get("");
 	}
 
 	@Test
-	public void TC_02_ValidatePageTitle() {
+	public void TC_02_() {
 		// Login Page title
-		String loginPageTitle = driver.getTitle();
-		Assert.assertEquals(loginPageTitle, "Guru99 Bank Home Page");
+		
 	}
 
 	@Test
-	public void TC_03_LoginFormDisplayed() {
-		// Login form displayed
-		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
+	public void TC_03_() {
+
 	}
 
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
+	}
+	
+	public void SleepInsecond(long time) {
+		try {
+			Thread.sleep(time*1000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public String getRandomEmail() {
+		Random rand = new Random();
+		return "huyendtt" + rand.nextInt(9999999) + "@gmail.com";
 	}
 
 }
