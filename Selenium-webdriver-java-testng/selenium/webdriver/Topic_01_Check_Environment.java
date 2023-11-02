@@ -37,6 +37,7 @@ public class Topic_01_Check_Environment {
     @Test
     public void TC_02_Logo() {
         Assert.assertTrue(driver.findElement(By.cssSelector("img.fb_logo")).isDisplayed());
+        //add comment
     }
 
     @Test
